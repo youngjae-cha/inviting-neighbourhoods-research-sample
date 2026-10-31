@@ -33,6 +33,8 @@ These analysis functions are provided for inspection and require authorized reco
 
 Open [`notebooks/SELECTED_RESULTS_EXECUTED.ipynb`](notebooks/SELECTED_RESULTS_EXECUTED.ipynb) for completed cells, the included summary tables and embedded result figures.
 
+[Open the GitHub-rendered notebook directly](https://notebooks.githubusercontent.com/view/ipynb?browser=unknown_browser&bypass_fastly=true&color_mode=auto&commit=2e4a3f8e5cb9aff283aad56bf8352536cc23d580&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f796f756e676a61652d6368612f696e766974696e672d6e65696768626f7572686f6f64732d72657365617263682d73616d706c652f326534613366386535636239616666323833616164353662663833353235333663633233643538302f6e6f7465626f6f6b732f53454c45435445445f524553554c54535f45584543555445442e6970796e62&link_underline_enabled=true&logged_in=true&nwo=youngjae-cha%2Finviting-neighbourhoods-research-sample&path=notebooks%2FSELECTED_RESULTS_EXECUTED.ipynb&platform=unknown_platform&repository_id=1440648928&repository_type=Repository&version=0#92ac5261-2af3-4e19-a8bb-c18af3f1f211) if the embedded GitHub preview stalls. This view shows the same executed notebook, pinned to its original publication commit.
+
 Tested with Python 3.13:
 
 ```bash
