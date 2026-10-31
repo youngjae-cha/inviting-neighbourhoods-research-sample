@@ -1,0 +1,39 @@
+Copyright (c) 2026 Youngjae Cha, Ocka Jeong, Maya Thamer-Nall and Shigehiro Oishi
+
+This repository is released under two licences.
+
+Code — the six notebooks in `notebooks/` and `gabm/code.py` — is released under the MIT
+License, reproduced in full below.
+
+Data — everything in `data/`, together with the recomputed tables in `results/` and the
+display items in `figures/` — is released under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+The data licence covers the derived and aggregated files distributed here. It does not
+grant any right in the third-party sources those files were built from; those sources
+remain governed by their own terms, which `data/DATA_SOURCES.md` lists source by source.
+Material that could not be redistributed is named there and is not included.
+
+Attribution for either licence is satisfied by citing the paper.
+
+--------------------------------------------------------------------------------
+
+MIT License (code)
+
+Copyright (c) 2026 Youngjae Cha, Ocka Jeong, Maya Thamer-Nall and Shigehiro Oishi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.

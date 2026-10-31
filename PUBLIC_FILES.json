@@ -1,0 +1,87 @@
+{
+  "status": "PUBLIC_RESEARCH_SAMPLE",
+  "manifest_file": "PUBLIC_FILES.json",
+  "scope": "Selected actual research code, selected actual figures, executed figure-preview notebook, model-level summary cells only.",
+  "excluded": [
+    "raw reviews and reviewer identifiers",
+    "respondent and analysis-level records",
+    "agent and incident-level records",
+    "trained model weights",
+    "private prompts",
+    "credentials",
+    "original manuscripts",
+    "private execution logs and source paths"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 171,
+      "sha256": "91bb873075e5b5b0aa12d8d41080e93a91dc6eecf883833e5164eae5d70a9bc6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 2132,
+      "sha256": "dff79af11fd477d76ccf92ce43c604cb4ef0e5e408257ac78385ea0f988e27ec"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4424,
+      "sha256": "58277815379b06e9f702d20a890dc2c8669077f2854335141abb2e4c374fa449"
+    },
+    {
+      "path": "code/archived_replay_excerpt.py",
+      "bytes": 1511,
+      "sha256": "b24773b6503346c4ceed2e366a86319eb7b04a5d5dc7c0fc602c5cff36497833"
+    },
+    {
+      "path": "code/area_model_excerpt.py",
+      "bytes": 912,
+      "sha256": "e41d4c78b9ae796681b00cf0a4d6ceddb2a1fb855248b743f1a656690cab256e"
+    },
+    {
+      "path": "code/result_figures.py",
+      "bytes": 3413,
+      "sha256": "f4cc0c9c6cc15fce2eb1a73548b66b37d8f13e80b90657e20929c37ec4412202"
+    },
+    {
+      "path": "code/survey_model_excerpt.py",
+      "bytes": 1889,
+      "sha256": "2bf643ea4f30fed629ed83a72e0a11259cf7bad72d00dd0ad24c2c8701a6b99b"
+    },
+    {
+      "path": "figures/01_saved_survey_associations.png",
+      "bytes": 86480,
+      "sha256": "0c681dcb6d2c4b39daed60917863728e3eadce5e4b4b041c27281f4c23ab11ee"
+    },
+    {
+      "path": "figures/02_saved_archived_replay.png",
+      "bytes": 100319,
+      "sha256": "ac7581be275681abf0db8e79df2b106b66728dee974285e771c358b283783853"
+    },
+    {
+      "path": "notebooks/SELECTED_RESULTS_EXECUTED.ipynb",
+      "bytes": 260997,
+      "sha256": "09ef3e31955fcb9bd65ed5db995fe32c9119b369d7a703e3cdf109a0e6c2e1f1"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 151,
+      "sha256": "58c32a3b5b837c3fc1f37a4501982e81a7ae2370aa083328eb54f86b5e8e1a74"
+    },
+    {
+      "path": "results/selected_archived_replay_means.csv",
+      "bytes": 265,
+      "sha256": "5e917e944abbdefd78d96655e4c5d69b34c01beb696bac1aaa480309d3f58ff2"
+    },
+    {
+      "path": "results/selected_survey_coefficients.csv",
+      "bytes": 456,
+      "sha256": "3f46492e2250c44b9a0e0b01e434f1c39de44299a5b06535be366d84920a3885"
+    },
+    {
+      "path": "scripts/execute.py",
+      "bytes": 2787,
+      "sha256": "91edb59ad2611c423d84b9748d5bbb7de5068b0b105f549bde555c3a3b1107b3"
+    }
+  ]
+}
