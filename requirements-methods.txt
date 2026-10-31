@@ -1,0 +1,2 @@
+# Optional original-processing dependencies; the public walkthrough uses requirements.txt only.
+openai==2.28.0

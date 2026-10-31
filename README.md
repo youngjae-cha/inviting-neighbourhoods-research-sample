@@ -1,39 +1,54 @@
-# Inviting neighbourhoods: selected research code and results
-
-**Selected research sample from an ongoing, unpublished study.** This sample contains selected analysis code and saved results from an ongoing project on neighbourhood environments, felt ownership and civic care. The complete study materials remain private.
+# Inviting neighbourhoods: original agent workflow and archived replay methods
 
 ## Research question
 
 How do neighbourhood qualities relate to people's sense that a place is theirs to care for, and how might repeated encounters with a place relate to civic responses?
 
-The broader project combines geographic analyses, surveys and archived generative agent-based modelling. This sample illustrates the survey analysis and numerical post-processing of archived model judgments. It does not distribute the simulation engine or its prompts.
+The broader project combines geographic analyses, surveys and archived agent-based modelling. This repository now exposes the **actual agent functions, original manual settings, survey-to-persona transformation, full replay prompt program and replay-analysis functions**, alongside selected saved aggregate results.
 
-## Selected results
+## Start with the executed notebooks
+
+- **[Agent methods walkthrough — executed](notebooks/METHODS_WALKTHROUGH_EXECUTED.ipynb):** shows original configuration, place choice, state updates, incident handling, the original single-area runner and the later replay prompts. It imports and inspects code without simulating agents or calling a provider.
+- **[Selected results — executed](notebooks/SELECTED_RESULTS_EXECUTED.ipynb):** redraws the existing survey coefficients and aggregate archived-judgment means.
+
+## The agent process
+
+```mermaid
+flowchart LR
+    A[Authorized place and persona inputs] --> B[Place choice: distance, novelty, habit, visual pull]
+    B --> C[Visit count and ownership-memory update]
+    C --> D[Incident generation and probabilistic noticing]
+    D --> E[Archived incident stream]
+    E --> F[Later LLM replay: recorded history versus first visit]
+    F --> G[Paired saved judgments and analysis]
+```
+
+The archived simulation uses specified equations for movement, memory and noticing. In the primary engine, visual scores affect place choice but do not directly enter the ownership-update multiplier. The later replay presents the same noticed incident with recorded history and as a first visit; its prompts omit place identity, imagery, visual score and the numeric ownership-memory state. History includes both visit count and prior noticed problems.
+
+The **older simulation audit and formula-based reporting propensity** remain visible in the original runner. They are separate from the later replay outcomes displayed in the saved-results figure. Elicited ownership is also separate from simulated ownership memory. The source preserves these distinctions rather than replacing the original functions with generic interfaces.
+
+## Source reading order
+
+| Stage | Actual source |
+|---|---|
+| Original settings, agent state, place choice, memory/noticing equations, older audit prompt and full single-area runner | [archived_simulation.py](code/agents/archived_simulation.py) |
+| Original questionnaire-item transformations into agent dispositions | [persona_mapping.py](code/agents/persona_mapping.py) |
+| Complete later replay: prompt wording, history construction, matched controls, repeated judgments and caching | [replay_judgment.py](code/agents/replay_judgment.py) |
+| Complete replay analysis, including civic-action construction and paired-history summaries | [replay_analysis.py](code/agents/replay_analysis.py) |
+
+The simulation's original function bodies and manual configuration are retained; a new `configure_inputs` function replaces institutional file-loading setup. The persona mapping preserves the original transformation statements in a function with an explicit input frame. Both replay files are byte-for-byte source copies. [METHOD_SOURCE_MAP.json](METHOD_SOURCE_MAP.json) records the changes and source hashes. Earlier survey, geographic-analysis and summary-display excerpts remain in `code/`.
+
+## Representative archived results
 
 ![Survey associations with felt ownership](figures/01_saved_survey_associations.png)
 
-The survey panel displays five saved coefficients from one joint model of felt ownership (**2,691 complete cases**), adjusting for demographic covariates and city fixed effects, with city-clustered 95% confidence intervals. Perceived aesthetics has the largest coefficient among these five included neighbourhood qualities. This is an observational association, not an estimated intervention effect.
+The survey panel shows five saved coefficients from a joint felt-ownership model with 2,691 complete cases, demographic adjustment and city fixed effects, using city-clustered intervals. It reports observational associations.
 
 ![Selected archived model judgments](figures/02_saved_archived_replay.png)
 
-The second panel shows saved language-model judgments for archived incidents at places visited at least six times. Each pair compares the **same incidents** judged as a first visit and with the resident's recorded history. Counts are 504 incidents for the first three outcomes and 246 for stewardship. Outcomes are model-judged shares on a 0–100 scale; they are not observed human actions or estimated real-world probabilities.
+The replay panel compares the same archived incidents under first-visit and recorded-history descriptions, for places visited at least six times. It retains the source table's pooling of observed and swapped-scoring arms. Counts are 504 incidents for the first three outcomes and 246 for stewardship. The values are model-judged shares; they are not observed human actions. The saved panel alone does not establish a human causal mechanism.
 
-This descriptive panel pools the original and swapped-scoring arms in the original archived run, following the source summary table. It shows no newly calculated confidence intervals. Calibration and scoring sensitivities in the full study are outside this sample; the panel alone does not establish an aesthetics-to-civic-care causal mechanism.
-
-## Representative code
-
-- `code/area_model_excerpt.py`: unchanged original functions for rank standardization, state demeaning and HC1 estimation in the geographic analysis.
-- `code/survey_model_excerpt.py`: the original felt-ownership construction and joint estimation block, wrapped as a function accepting an authorized survey frame. The wrapper supplies original notebook globals explicitly and removes file writing and display statements; the numerical estimation statements are retained.
-- `code/archived_replay_excerpt.py`: unchanged original functions for CR1 clustered uncertainty and paired post-processing of archived judgments. It contains no language-model calls or prompt text.
-- `code/result_figures.py`: display code for the two selected saved-result panels.
-
-These analysis functions are provided for inspection and require authorized records that are not included. The executed notebook only redraws saved summary results; it does not fit these models or run agents.
-
-## Executed notebook and running it
-
-Open [`notebooks/SELECTED_RESULTS_EXECUTED.ipynb`](notebooks/SELECTED_RESULTS_EXECUTED.ipynb) for completed cells, the included summary tables and embedded result figures.
-
-[Open the GitHub-rendered notebook directly](https://notebooks.githubusercontent.com/view/ipynb?browser=unknown_browser&bypass_fastly=true&color_mode=auto&commit=2e4a3f8e5cb9aff283aad56bf8352536cc23d580&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f796f756e676a61652d6368612f696e766974696e672d6e65696768626f7572686f6f64732d72657365617263682d73616d706c652f326534613366386535636239616666323833616164353662663833353235333663633233643538302f6e6f7465626f6f6b732f53454c45435445445f524553554c54535f45584543555445442e6970796e62&link_underline_enabled=true&logged_in=true&nwo=youngjae-cha%2Finviting-neighbourhoods-research-sample&path=notebooks%2FSELECTED_RESULTS_EXECUTED.ipynb&platform=unknown_platform&repository_id=1440648928&repository_type=Repository&version=0#92ac5261-2af3-4e19-a8bb-c18af3f1f211) if the embedded GitHub preview stalls. This view shows the same executed notebook, pinned to its original publication commit.
+## Run the public walkthroughs
 
 Tested with Python 3.13:
 
@@ -41,13 +56,24 @@ Tested with Python 3.13:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+python scripts/execute_methods.py
 python scripts/execute.py
 ```
 
-Re-execution redraws the two figures, refreshes notebook outputs and writes an execution receipt under ignored `outputs/`. It needs no API keys, model downloads or external data.
+These commands inspect method code and display existing saved results. They require no private data, API key, model download or simulation run.
 
-## Included and withheld material
+The replay program accepts separately authorized incident files and caller-provided credentials. Install `requirements-methods.txt` to use that optional program, and begin with:
 
-`results/` contains **five model-level survey coefficients and four aggregate pairs of archived judgment means**, with the associated sample sizes. It contains no respondent records, addresses, geographic analysis frames, agent histories, incident-level judgments, screenshots, model weights, private prompts or API credentials. The original research notebooks and full simulation configuration are withheld.
+```bash
+python code/agents/replay_judgment.py --help
+```
 
-`PUBLIC_FILES.json` is the closed list of proposed public files. This is a selected research sample, not a complete replication package. The source project's copyright and license notice is retained in `LICENSE`; references there to the full upstream package do not imply that its data are included here.
+Its `--dry-run` mode creates prompt tables from the supplied incident file without provider calls. Actual judgments require an explicit invocation and the caller's own external credentials. No credentials or incident files are supplied here.
+
+[METHODS_AND_INPUTS.md](METHODS_AND_INPUTS.md) documents the original fallback behavior, process-dependent hash seeding and input schemas. The source's hard-coded cost estimate is archival, not a current price quote. The walkthrough does not re-run the study or claim bitwise reproduction of its historical archive.
+
+## Public scope
+
+Included: original method functions, manual simulation settings, actual prompt templates, source hashes, selected saved aggregate figures/tables and executed walkthroughs. Excluded: respondent/persona records, names, addresses, coordinates, place tables, individual agent histories, incident rows, response caches, learned weights, images, manuscripts and credentials. Original identifier field names are retained as schema, with no real values.
+
+`PUBLIC_FILES.json` is the closed file manifest. Original research files and saved results are preserved. The upstream license notice remains in `LICENSE`; data referred to by the broader project are not included in this sample.

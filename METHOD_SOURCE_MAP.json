@@ -1,0 +1,63 @@
+{
+  "scope": "Actual computational source with explicit original/public changes. No claim of new study execution.",
+  "files": [
+    {
+      "file": "code/agents/archived_simulation.py",
+      "source_label": "code.py",
+      "source_sha256": "64afafca508143112fd83a20a69b7ac924c1c71350e62cbfe81854bd7b2f73e4",
+      "kind": "verbatim_functions_and_configuration_with_public_input_setup",
+      "symbols": [
+        "extract_json",
+        "Agent",
+        "make_agents",
+        "day_state",
+        "choose_pois",
+        "p_notice",
+        "audit_prompt",
+        "_audit",
+        "report_prop",
+        "run_one",
+        "CFG",
+        "PUB",
+        "PRV",
+        "NOTICE_PARAMS"
+      ],
+      "changes": [
+        "Original functions, manual constants, audit prompt, fallback scores and process-dependent hash seeds retained.",
+        "Frozen-table loading, respondent records, Colab mount, automatic grid launch and diagnostics excluded.",
+        "New configure_inputs only binds caller-provided dataframes, output folder and optional client/cache."
+      ]
+    },
+    {
+      "file": "code/agents/persona_mapping.py",
+      "source_label": "code.py",
+      "source_sha256": "64afafca508143112fd83a20a69b7ac924c1c71350e62cbfe81854bd7b2f73e4",
+      "kind": "original_transformation_wrapped_without_file_io",
+      "symbols": [
+        "GPOOL construction",
+        "_01v",
+        "uni"
+      ],
+      "changes": [
+        "Input frame is explicit; original mapping equations retained; original file read/write omitted."
+      ]
+    },
+    {
+      "file": "code/agents/replay_judgment.py",
+      "source_label": "replay_judgment.py",
+      "source_sha256": "8bd3f35de9e86fb446e5b450446b9b24589fc31436970c448945eb7511da09a3",
+      "kind": "verbatim_complete_file",
+      "symbols": [],
+      "changes": []
+    },
+    {
+      "file": "code/agents/replay_analysis.py",
+      "source_label": "replay_analysis.py",
+      "source_sha256": "fef9270e999ddec69b94c9e33f32e866ac24de4827caaee4826e1f0bee0ba9b7",
+      "kind": "verbatim_complete_file",
+      "symbols": [],
+      "changes": []
+    }
+  ],
+  "historical_execution_provenance": "Retrospective code and source hashes, not execution-time binary attestation."
+}
